@@ -15,10 +15,19 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Call
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportFragmentManager()
-            .beginTransaction()
-            .add(R.id.container, MainFragment.newInstance("Placeholder"))
-            .commit();
+        if (findViewById(R.id.container) != null) {
+
+            // Return immediately if the activity is being restored from a previous state so that
+            // we avoid overlapping fragment instances.
+            if (savedInstanceState != null) {
+                return;
+            }
+
+            getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.container, MainFragment.newInstance("Placeholder"))
+                .commit();
+        }
     }
 
     @Override

@@ -2,6 +2,7 @@
 <resources>
     <style name="Exponential.Theme.Light" parent="Exponential.Theme.Base">
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!--Do not use statusBarColor unless NavigationDrawer is implemented-->
+        <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
     </style>
 </resources>
